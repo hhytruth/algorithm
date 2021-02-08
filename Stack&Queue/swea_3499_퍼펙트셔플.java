@@ -30,5 +30,5 @@ public class Shuffle {
 			System.out.println();
 		}
 	}
-
+ 
 }
