@@ -2,7 +2,7 @@ package algorithm.greedy;
 import java.io.*;
 import java.util.*;
 
-public class boj_1439 {	
+public class boj_1439_뒤집기 {	
 	
 	public static void main(String[] args) throws Exception{
 	
