@@ -39,12 +39,11 @@ public class boj_1080_행렬 {
 		int[] dxdy= {0,1,2};
 		int count=0;
 		boolean found=false;
-		boolean[][] flipped=new boolean[N][M];
 
 		
 		for(int i=0;i<N-2;i++) {
 			for(int j=0;j<M-2;j++) {
-				if(diff[i][j]==true&&!flipped[i][j]) {
+				if(diff[i][j]==true) {
 					
 					for(int a=0;a<3;a++) {
 						for(int b=0;b<3;b++) {
@@ -53,7 +52,6 @@ public class boj_1080_행렬 {
 							else diffCount--;
 						}
 					}
-					flipped[i][j]=true;
 					count++;
 				}
 			}
