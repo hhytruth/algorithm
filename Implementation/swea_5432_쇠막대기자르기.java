@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class Laser {
+public class swea_5432_쇠막대기자르기 {
 	
 	public static void main(String[] args) throws Exception {
 		
