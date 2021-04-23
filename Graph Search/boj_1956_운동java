@@ -1,0 +1,52 @@
+package algorithm.graph;
+import java.io.*;
+import java.util.*;
+
+public class boj_1956_운동 {
+
+	public static void main(String[] args) throws Exception {
+
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st=new StringTokenizer(br.readLine());
+		int V=Integer.parseInt(st.nextToken());
+		int E=Integer.parseInt(st.nextToken());
+		int[][] matrix=new int[V+1][V+1];
+		for(int i=0;i<E;i++) {
+			st=new StringTokenizer(br.readLine());
+			int a=Integer.parseInt(st.nextToken());
+			int b=Integer.parseInt(st.nextToken());
+			int c=Integer.parseInt(st.nextToken());
+			matrix[a][b]=c;
+		}
+		
+		for(int i=0;i<=V;i++) {
+			for(int j=0;j<=V;j++) {
+				if(matrix[i][j]==0)matrix[i][j]=8000001;
+			}
+		}
+		
+		for(int via=1;via<=V;via++) {
+			for(int from=1;from<=V;from++) {
+				if(from==via)continue;
+				for(int to=1;to<=V;to++) {
+					if(from==to||to==via)continue;
+					if(matrix[from][via]+matrix[via][to]<matrix[from][to]) {
+						matrix[from][to]=matrix[from][via]+matrix[via][to];
+					}
+				}
+			}
+		}
+		
+		int min=8000001;
+		for(int i=1;i<=V;i++) {
+			for(int j=1;j<=V;j++) {
+				if(min>matrix[i][j]+matrix[j][i])
+					min=matrix[i][j]+matrix[j][i];
+			}
+		}
+		
+		if(min>=8000001)System.out.println(-1);
+		else System.out.println(min);
+	}
+
+}
