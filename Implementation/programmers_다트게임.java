@@ -1,4 +1,4 @@
-class Solution {
+class programmers_다트게임 {
   public static int solution(String dartResult) {
 	        int answer = 0;
 	        int prev=0;
